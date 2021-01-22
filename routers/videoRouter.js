@@ -1,5 +1,12 @@
 import express from "express"
+import routes from "../routes"
 
-const userRouter = express.Router();
+const videoRouter = express.Router();
 
-export default userRouter
+videoRouter.get(routes.videos, (req, res)=>res.send("videos"))
+videoRouter.get(routes.upload, (req, res)=>res.send("upload"))
+videoRouter.get(routes.deleteVideo, (req, res)=>res.send("deleteVideo"))
+videoRouter.get(routes.videoDetail, (req, res)=>res.send("videoDetail"))
+videoRouter.get(routes.editVideo, (req, res)=>res.send("editVideo"))
+
+export default videoRouter
